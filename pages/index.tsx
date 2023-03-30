@@ -1,11 +1,155 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import { ThemeProvider, responsiveFontSizes, createTheme } from "@mui/material/styles";
+import Carousel from '@/components/carousel';
+import AppBar from '@/components/appbar';
+import FeaturedProperties from '@/components/featured-properties';
+import Collage from '@/components/collage';
+import ColorButton from '@/components/color-button';
+import React from 'react';
+import { padding } from '@mui/system';
 
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export let homeTheme = createTheme({
+    typography: {
+        fontFamily: ['Cormorant Garamond', 'Arapey', 'Playfair Display', 'serif'].join(',')
+    },
+    palette: {
+        primary: {
+            dark: '#1a1212',
+            main: '#c4c4c4',
+            light: '#c4c4c4'
+        }
+    }
+});
+homeTheme = responsiveFontSizes(homeTheme);
+
+
+const headerImages = [
+	'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
+	'https://images.coolhouseplans.com/plans/44207/44207-b600.jpg'
+]; 
+const menuLinks = [
+	{label: 'About', link: '', onClick: () =>
+	{
+		var about = document.getElementById('about');
+		if (about != null)
+			about.scrollIntoView({behavior:"smooth", block: "start", inline: "nearest"});
+	}},
+	{label: 'Home Search', link: '', onClick: () => {}},
+	{label: 'Contact Us', link: '', onClick: () => {}}
+];
+
+
+export default function Home()
+{
+  	return (
+	<React.StrictMode>
+    <ThemeProvider theme={homeTheme}>
+    	<Head>
+    		<title>YL Real Estate</title>
+        	<meta name='description' content='YL Real Estate' />
+        	<meta name='viewport' content='width=device-width, initial-scale=1' />
+        	<link rel='icon' href='/favicon.ico' />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		</Head>
+		<nav>
+			<AppBar menuLinks={menuLinks} leftMargin='3rem' centerText='YLRE' fontFamily='Arapey'/>
+		</nav>
+    	<header className='container'>
+			<Box className='half-darkened'>
+				<Carousel images={headerImages} showStepper={false} interval={10000} />
+			</Box>
+			<Box className='centered'>
+				<Typography color='white' variant='h1' fontFamily='Playfair Display'>
+					YL Real Estate
+				</Typography>
+				<Typography color='white' variant='h4'>
+					Some description over here
+				</Typography>
+			</Box>
+    	</header>
+    	<section id='about'>
+			<Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'flex-start'}}>
+				<img id='avatar' src='https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80'
+					alt='About us'/>
+				<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '5rem'}}>
+					<Typography variant='h2' fontFamily='Playfair Display'>
+						Yi Li
+					</Typography>
+					<Typography variant='subtitle1' fontFamily='Playfair Display'>
+						Some description
+					</Typography>
+					<br/><br/>
+					<Typography variant='h5' fontFamily='Playfair Display'><i>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid sint accusamus, quod laboriosam repudiandae sequi iure incidunt temporibus necessitatibus tempora dicta, ullam iusto perspiciatis architecto nesciunt sapiente eaque maxime.
+						<br/><br/>
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam eligendi voluptatem dignissimos sequi quam autem dolore soluta porro voluptate nostrum obcaecati inventore aperiam ea illum, necessitatibus, architecto modi nemo? Provident.
+					</i></Typography>
+				</Box>
+			</Box>
+    	</section>
+		<section id='properties'>
+			<Typography variant='h3' fontFamily='Playfair Display' marginBottom='3rem'>
+				Featured Properties
+			</Typography>
+			<FeaturedProperties />
+		</section>
+		<section id='neighborhoods'>
+			<Typography variant='h3' fontFamily='Playfair Display' marginBottom='3rem'>
+				Neighborhoods
+			</Typography>
+			<Collage />
+		</section>
+		<section id='home-contact-us'>
+			<Typography variant='h2' fontFamily='Arapey' marginBottom='1rem'>
+				Contact Us
+			</Typography>
+			<Typography variant='h6' fontFamily='Cormorant Garamond' marginBottom='3rem' width='50%' textAlign='center'>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur perferendis corrupti ipsum eaque voluptatem! Praesentium placeat, veritatis sint quam odio molestias dolore, fugit blanditiis repudiandae, voluptatum laboriosam minima. Nam, totam!
+			</Typography>
+			<Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '1rem'}}>
+				<ColorButton title='List Your Home' onClick={() => {}}/>
+				<ColorButton title='Buy a Home' onClick={() => {}}/>
+			</Box>
+		</section>
+		<footer>
+			<Typography variant='h2' color='white' fontFamily='Arapey' padding='5rem 2rem 1rem 2rem'>
+            	YLRE
+        	</Typography>
+			<span className='material-symbols-outlined'>
+				call
+				<Typography display='inline' variant='h6' color='white' fontFamily='Arapey' padding='1rem'>
+					123-123-1234
+        		</Typography>
+			</span>
+			<span className='material-symbols-outlined'>
+				alternate_email
+				<Link href='' display='inline' variant='h6' color='inherit' fontFamily='Arapey' padding='1rem'>
+					something@email.com
+        		</Link>
+			</span>
+			<Typography variant='h6' color='white' fontFamily='Arapey' padding='2rem' width='50%' textAlign='center'>
+            	Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quos error impedit veritatis laudantium officia fuga alias placeat, suscipit aliquid tempore repellendus laboriosam architecto. Rerum atque natus nisi error eos.
+        	</Typography>
+			<Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
+				<Typography variant='subtitle1' color='white' fontFamily='Arapey' padding='2rem 0rem 2rem 5rem'>
+					COPYRIGHT © 2023
+        		</Typography>
+				<Typography variant='subtitle1' color='white' fontFamily='Arapey' padding='2rem 4rem 2rem 0rem'><i>
+					Website designed and developed by Guo.
+				</i></Typography>
+			</Box>
+		</footer>
+    </ThemeProvider>
+	</React.StrictMode>
+  );
+    /*
   return (
     <>
       <Head>
@@ -119,5 +263,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  )*/
 }
