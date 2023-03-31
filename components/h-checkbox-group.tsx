@@ -42,7 +42,7 @@ export default function HCheckboxGroup(props: HChecboxGroupProps)
                 <Typography color='black'variant='h5' fontFamily='Cormorant Garamond' key={keys[i]}>
                     {keys[i]}
                 </Typography>
-            }/>
+            } key={keys[i]}/>
         );
     }
 

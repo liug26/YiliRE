@@ -66,10 +66,11 @@
         "image": "https://assets.site-static.com/userFiles/2862/image/The-Canyons-Guard-Gate_Rec-Center_Porter-Ranh_1800.jpg"
     }],
 
-    "headerImages":[
-        "https://images.coolhouseplans.com/plans/44207/44207-b600.jpg",
-        "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
-        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-        "https://images.squarespace-cdn.com/content/v1/57c65003197aea3e7a3d48b9/1597037716933-QEOR4PIM6DD8MTHRXTB6/072--FULL.jpg"
+    "headerImages": [
+        "/images/Contemporary-Lake-Lodge-Swan-Architecture-05-1-Kindesign.jpeg",
+        "/images/44207-b600.jpeg",
+        "/images/download-23.jpeg",
+        "/images/photo-1582407947304-fd86f028f716.jpeg",
+        "/images/072--FULL.jpeg"
     ]
 }

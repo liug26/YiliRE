@@ -13,6 +13,7 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import { useRouter } from 'next/router'
 
 
+const emailTo = 'dawangyi1@126.com';
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref)
 {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -85,26 +86,28 @@ export default function ContactUs(props: any)
                 return;
             }
 
-        const res = await fetch('/api/sendgrid',
+        const res = await fetch('api/nodemailer',
         {
-            body: JSON.stringify(
+			method: 'POST',
+			headers:
+            {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(
             {
                 fullname: `${info['firstName']} ${info['lastName']}`,
                 email: info['email'],
                 phone: info['phone'],
                 price: info['price'],
-                message: info['message']
-            }),
-            headers:
-            {
-                'Content-Typ': 'application/json',
-            },
-            method: 'POST',
-        });
+                foi: checboxState,
+                message: info['message'],
+                emailTo: emailTo
+            })
+		})
     
         const { error } = await res.json();
         if (error)
-            setSnackBarState({severity: 'error', text: 'Unknown error occured', visibility: true});
+            setSnackBarState({severity: 'error', text: 'Unknown error occured, please send us an email manually to contact us', visibility: true});
         else
             setSnackBarState({severity: 'success', text: 'Your reponse was successfully recorded', visibility: true});
     };
@@ -161,7 +164,9 @@ export default function ContactUs(props: any)
                     </Grid>
                 </Grid>
                 <Snackbar id='warn-bar' open={snackBarState['visibility']} autoHideDuration={6000} onClose={handleWarnBarClose}>
-                    <Alert onClose={handleWarnBarClose} severity='warning' sx={{width: '100%'}}>
+                    <Alert onClose={handleWarnBarClose} severity={snackBarState['severity'] == 'warning' ? 'warning' :
+                    snackBarState['severity'] == 'success' ? 'success' : snackBarState['severity'] == 'error' ? 'error' : 'info'}
+                    sx={{width: '100%'}}>
                         <Typography color='white' variant='body1' fontFamily='Cormorant Garamond'>
                             {snackBarState['text']}
                         </Typography>
