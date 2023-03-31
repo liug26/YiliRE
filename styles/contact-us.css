@@ -1,0 +1,10 @@
+#contact-us
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    width: 100%;
+    background-color: white;
+}

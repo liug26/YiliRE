@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { Typography } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import MuiToolbar from '@mui/material/Toolbar';
 
+const leftMargin = '3rem';
+const centerText='YLRE';
+const fontFamily='Arapey';
 
 interface AppBarProps
 {
@@ -14,20 +16,23 @@ interface AppBarProps
         link: string;
         onClick() : any;
     }[];
-    leftMargin: string;
-    centerText: string;
-    fontFamily: string;
+    enableTopTransparent? : boolean; // defaults to true
 }
 
-function AppBar(props: AppBarProps)
+export default function AppBar(props: AppBarProps)
 {
     useEffect(() =>
     {
-        let onScroll = () =>
+        const appBar = document.getElementById('app-bar');
+        if (props.enableTopTransparent === false && appBar != null)
         {
-            const appBar = document.getElementById('app-bar');
+          appBar.style.backgroundColor = 'white';
+          appBar.style.color = 'black';
+        }
+        const onScroll = () =>
+        {
             if (appBar != null)
-                if (window.scrollY === 0)
+                if ((props.enableTopTransparent === undefined || props.enableTopTransparent) && window.scrollY === 0)
                 {
                     appBar.style.backgroundColor = 'transparent';
                     appBar.style.color = 'white';
@@ -43,54 +48,38 @@ function AppBar(props: AppBarProps)
         {
           window.removeEventListener("scroll", onScroll);
         };
-    });
+    }, []);
 
     const menuLinksHTML = [];
     for (let menuLink of props.menuLinks)
     {
         if (menuLink.link === '')
         {
-            menuLinksHTML.push(<Link
-                variant="h6"
-                underline="none"
-                  color='inherit'
-                  onClick={menuLink.onClick} tabIndex={0} component="button"
-                  sx={{marginLeft: props.leftMargin}}
-                  fontFamily={props.fontFamily}
-              >
+            menuLinksHTML.push(<Link key={menuLink.label} variant='h6' underline='none'color='inherit' onClick={menuLink.onClick}
+            tabIndex={0} component='button' sx={{marginLeft: leftMargin}} fontFamily={fontFamily}>
                 {menuLink.label}
-              </Link>);
+            </Link>);
         }
         else
         {
-            menuLinksHTML.push(<Link
-                variant="h6"
-                underline="none"
-                  color='inherit'
-                href={menuLink.link}
-                  sx={{marginLeft: props.leftMargin}}
-                  fontFamily={props.fontFamily}
-              >
+            menuLinksHTML.push(<Link variant='h6' underline='none' color='inherit' href={menuLink.link} sx={{marginLeft: leftMargin}}
+            fontFamily={fontFamily}>
                 {menuLink.label}
-              </Link>);
+            </Link>);
         }
     }
 
-  return (
-    <div>
-      <MuiAppBar id='app-bar' elevation={0} position="fixed">
-        <MuiToolbar sx={{ justifyContent: 'space-between' }}>
-        <Box sx={{ flex: 1 }} />
-          <Typography variant='h4' color='inherit' fontFamily={props.fontFamily}>
-            {props.centerText}
-          </Typography>
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {menuLinksHTML}
-          </Box>
-        </MuiToolbar>
+    return (
+        <MuiAppBar id='app-bar' elevation={0} position='fixed'>
+            <MuiToolbar sx={{justifyContent: 'space-between'}}>
+                <Box sx={{flex: 1}} />
+                <Link href='/' underline='none' variant='h4' color='inherit' fontFamily={fontFamily}>
+                    {centerText}
+                </Link>
+                <Box sx={{flex: 1, display: 'flex', justifyContent: 'flex-end'}}>
+                    {menuLinksHTML}
+                </Box>
+            </MuiToolbar>
       </MuiAppBar>
-    </div>
   );
 }
-
-export default AppBar;

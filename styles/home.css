@@ -1,15 +1,11 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
 .half-darkened
 {
   filter: brightness(50%);
+}
+
+.quarter-darkened
+{
+  filter: brightness(75%);
 }
 
 /* based on https://www.w3schools.com/howto/howto_css_image_text.asp */
@@ -54,7 +50,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 3rem 2rem;
-  flex-direction: column;
   width: 100%;
 }
 
@@ -65,7 +60,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 3rem 2rem;
-  flex-direction: column;
   width: 100%;
   /* background-color: #d6cfc7; */
 }
@@ -78,7 +72,6 @@
   align-items: center;
   padding: 3rem 0rem;
   background-color: #d6cfc7;
-  flex-direction: column;
   width: 100%;
 }
 
@@ -91,6 +84,12 @@ footer
   flex-direction: column;
   background-color: black;
   color: white;
+}
+
+.fifty-centered-text
+{
+  width: 50%;
+  text-align: center;
 }
 
 .description {

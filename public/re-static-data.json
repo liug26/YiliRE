@@ -1,0 +1,75 @@
+{
+    "featuredProperties": [
+    {
+        "address": "1",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": "https://img.staticmb.com/mbcontent//images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg"
+    },{
+        "address": "2",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    },{
+        "address": "3",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    },{
+        "address": "4",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    },{
+        "address": "5",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    },{
+        "address": "6",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>"
+    },{
+        "address": "7",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    },{
+        "address": "8",
+        "price": 123,
+        "subtitle": "3 Beds | 1 Bath | 60 ft<sup>2</sup>",
+        "image": ""
+    }],
+
+    "neighborhoods_cols": 3,
+    "neighborhoods":[
+    {
+        "title": "Chino, CA",
+        "image": "https://ktgy.com/wp-content/uploads/2020/05/Town-Center-at-The-Preserve-Chino-California-Lewis-Retail-Centers-Ground-Up-Restaurant-Grocery-Store-Office-KTGY-2-920x684.jpg"
+    },{
+        "title": "Chino Hills, CA",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/fe/2c/7b/baps-swaminarayan-temple.jpg?w=700&h=500&s=1"
+    },{
+        "title": "Eastvale, CA",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/16/84/57/91/getlstd-property-photo.jpg"
+    },{
+        "title": "Lake Forest, CA",
+        "image": "https://homequestsales.com/wp-content/uploads/2021/04/lf.jpg"
+    },{
+        "title": "Irvine, CA",
+        "image": "https://images.squarespace-cdn.com/content/v1/55ba65c5e4b0aa2fc6f7ada4/1598556485580-TZGWOK6OHT3NCJB7QAI6/ThinkstockPhotos-466379565-768x512.jpg"
+    },{
+        "title": "Newport Coast, CA",
+        "image": "https://www.visitnewportbeach.com/wp-content/uploads/2013/06/Little-Corona-Beach_VNB-Slideshow-700x400.jpg"
+    },{
+        "title": "Porter Ranch, CA",
+        "image": "https://assets.site-static.com/userFiles/2862/image/The-Canyons-Guard-Gate_Rec-Center_Porter-Ranh_1800.jpg"
+    }],
+
+    "headerImages":[
+        "https://images.coolhouseplans.com/plans/44207/44207-b600.jpg",
+        "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "https://images.squarespace-cdn.com/content/v1/57c65003197aea3e7a3d48b9/1597037716933-QEOR4PIM6DD8MTHRXTB6/072--FULL.jpg"
+    ]
+}
