@@ -55,7 +55,7 @@ export default function AppBar(props: AppBarProps)
     {
         if (menuLink.link === '')
         {
-            menuLinksHTML.push(<Link key={menuLink.label} variant='h6' underline='none'color='inherit' onClick={menuLink.onClick}
+            menuLinksHTML.push(<Link key={menuLink.label} variant='h6' underline='none' color='inherit' onClick={menuLink.onClick}
             tabIndex={0} component='button' sx={{marginLeft: leftMargin}} fontFamily={fontFamily}>
                 {menuLink.label}
             </Link>);
@@ -70,7 +70,7 @@ export default function AppBar(props: AppBarProps)
     }
 
     return (
-        <MuiAppBar id='app-bar' elevation={0} position='fixed'>
+        <MuiAppBar id='app-bar' elevation={0} position='fixed' sx={{backgroundColor: 'transparent'}}>
             <MuiToolbar sx={{justifyContent: 'space-between'}}>
                 <Box sx={{flex: 1}} />
                 <Link href='/' underline='none' variant='h4' color='inherit' fontFamily={fontFamily}>
