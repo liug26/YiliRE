@@ -11,6 +11,7 @@ import ColorButton from '@/components/color-button';
 import React from 'react';
 import { useRouter } from 'next/router'
 import useSWR from 'swr';
+import {playfairDisplay} from '@/utils/fonts'
 
 
 //Write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
@@ -92,7 +93,7 @@ export default function Home()
             <nav>
                 <AppBar menuLinks={menuLinks}/>
             </nav>
-            <header className='container'>
+            <header className={`container ${playfairDisplay.className}`}>
                 <Box className='half-darkened'>
                     <Carousel images={headerImages} showStepper={false} interval={10000} />
                 </Box>
