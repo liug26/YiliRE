@@ -87,8 +87,8 @@ export default function Home()
             <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap'/>
             <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'/>
             <Head>
-                <title>YL Real Estate</title>
-                <meta name='description' content='YL Real Estate' />
+                <title>Ella Yi Realty</title>
+                <meta name='description' content='Ella Yi Realty' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
@@ -101,7 +101,7 @@ export default function Home()
                 </Box>
                 <Box className='centered'>
                     <Typography color='white' variant='h1' fontFamily='Playfair Display'>
-                        YL Real Estate
+                        Ella Yi Realty
                     </Typography>
                     <Typography color='white' variant='h4'>
                         Some description over here
@@ -114,7 +114,7 @@ export default function Home()
                         alt='About us'/>
                     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '5rem'}}>
                         <Typography variant='h2' fontFamily='Playfair Display'>
-                            Yi Li
+                            Ella Yi
                         </Typography>
                         <Typography variant='subtitle1' fontFamily='Playfair Display'>
                             Some description
@@ -154,7 +154,7 @@ export default function Home()
             </section>
             <footer>
                 <Typography variant='h2' color='white' fontFamily='Arapey' padding='5rem 2rem 1rem 2rem'>
-                    YLRE
+                    EYR
                 </Typography>
                 <span className='material-symbols-outlined'>
                     call

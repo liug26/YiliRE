@@ -5,7 +5,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import MuiToolbar from '@mui/material/Toolbar';
 
 const leftMargin = '3rem';
-const centerText='YLRE';
+const centerText='EYR';
 const fontFamily='Arapey';
 
 interface AppBarProps
