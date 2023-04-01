@@ -53,6 +53,7 @@ function shuffle(array: string[])
 
 export default function Home()
 {
+    const router = useRouter();
     const {data, error} = useSWR('/api/re-static-data', fetcher);
     if (error)
     {
@@ -66,7 +67,6 @@ export default function Home()
     }
     const headerImages = shuffle(data.contents.headerImages);
 
-	const router = useRouter();
     const menuLinks = [
         {label: 'About', link: '', onClick: () =>
         {
@@ -145,8 +145,8 @@ export default function Home()
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur perferendis corrupti ipsum eaque voluptatem! Praesentium placeat, veritatis sint quam odio molestias dolore, fugit blanditiis repudiandae, voluptatum laboriosam minima. Nam, totam!
                 </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: '1rem'}}>
-                    <ColorButton title='List Your Home' onClick={() => { router.push({ pathname: 'contact-us', query: {buy: false}}); }}/>
-                    <ColorButton title='Buy a Home' onClick={() => { router.push({ pathname: 'contact-us', query: {buy: true}}); }}/>
+                    <ColorButton title='List Your Home' onClick={() => {router.push({ pathname: 'contact-us', query: {buy: false}}); }}/>
+                    <ColorButton title='Buy a Home' onClick={() => {router.push({ pathname: 'contact-us', query: {buy: true}}); }}/>
                 </Box>
             </section>
             <footer>

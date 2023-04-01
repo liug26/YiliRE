@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<{error: string}>
         auth:
         {
             user: 'dawangyi1@126.com',
-            pass: 'ATQTEXTFGUCJFVLG'
+            pass: process.env.EMAIL_PASS
         }
     });
 
