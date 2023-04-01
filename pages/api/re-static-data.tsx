@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 {
     try
     {
-        const fileContents = await fs.readFile(process.cwd() + '/public/re-static-data.json', 'utf8');
+        const fileContents = await fs.readFile('./re-static-data.json', 'utf8');
         res.status(200).json({error: '', contents: JSON.parse(fileContents)});
     }
     catch(error: any)

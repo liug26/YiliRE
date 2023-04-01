@@ -57,7 +57,7 @@ export default function Home()
     const {data, error} = useSWR('/api/re-static-data', fetcher);
     if (error)
     {
-        console.log('unable to fetch static data');
+        console.log(`unable to fetch static data: ${error}`);
         return;
     }
     if (!data)
