@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import { ThemeProvider, responsiveFontSizes, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { theme } from '@/pages/index'
 import AppBar from '@/components/appbar';
 import ColorButton from '@/components/color-button';

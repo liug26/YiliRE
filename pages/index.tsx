@@ -93,7 +93,7 @@ export default function Home()
             <nav>
                 <AppBar menuLinks={menuLinks}/>
             </nav>
-            <header className={`container ${playfairDisplay.className}`}>
+            <header className='container'>
                 <Box className='half-darkened'>
                     <Carousel images={headerImages} showStepper={false} interval={10000} />
                 </Box>
